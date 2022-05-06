@@ -177,7 +177,7 @@ Vervolgens is er nog de klasse FilmBrowserComponent.
         - de Objecten, indien er een zoekresultaat is, van de api toegevoegd als Film Objecten aan de array van de repository, gebruik hiervoor de method 'addFilms(dataObjecten)' van het filmRepository object. Vervolgens worden deze weergegeven op de pagina ,showFilms() method.
         - een gepaste boodschap gegeven - showNoResult() method, indien geen zoekresultaat is.
     - indien dit niet succesvol gebeurt, dan wordt een gepast bericht naar de console (dit mag eventueel ook via een alert of op de webpagina zelf) gestuurd.
-- de methode getFilm(id) zal, nadat op de knop details van een film is geklikt, de details data ophalen bij de api via een data request (maak gebruik van fetchRequest functie):
+- de methode getFilm(id) zal, nadat op de knop details van een film is geklikt, de details data ophalen bij de api via een http request:
     - indien dit succesvol gebeurt worden 
         - de filmdata, indien er een zoekresultaat is, van de api toegevoegd als Film object details aan de overeenkomstige film uit de repository, gebruik hiervoor de method 'addDetail(id, objDetail)'  Vervolgens wordt de film weergegeven op de pagina ,showDetailFilm(film) method.
         - een gepaste boodschap gegeven - showNoResult() method, indien geen zoekresultaat is.
