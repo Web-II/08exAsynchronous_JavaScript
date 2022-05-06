@@ -52,7 +52,7 @@ Exporteer de klasse en importeer ze in de file countriesRepository.js.
 
 - Creëer in CountriesComponent de methodes initialiseHTML() en getData():
 
-  - De methode getData() moet op basis van /data/countries.json de repository opvullen. Maak bij deze methode gebruik van async/await
+  - De methode getData() moet op basis van /data/countries.json de repository opvullen. Maak bij deze methode gebruik van async/await.
   Hierbij moet 'countryName' zowel de 'name' als de 'nativeName' uit de objecten van de API bevatten. Zo moet de 'countryName' voor Duitsland de string 'Germany - Deutschland' zijn.
   - De methode initialiseHTML() moet voorlopig enkel de methode getData() oproepen. 
   (eventueel kan je als test met console.log het repository-object afbeelden)
