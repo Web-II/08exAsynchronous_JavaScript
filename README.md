@@ -54,8 +54,7 @@ Exporteer de klasse en importeer ze in de file countriesRepository.js.
 
   - De methode getData() moet op basis van /data/countries.json de repository opvullen. Maak bij deze methode gebruik van async/await.
   Hierbij moet 'countryName' zowel de 'name' als de 'nativeName' uit de objecten van de API bevatten. Zo moet de 'countryName' voor Duitsland de string 'Germany - Deutschland' zijn.
-  - De methode initialiseHTML() moet voorlopig enkel de methode getData() oproepen. 
-  (eventueel kan je als test met console.log het repository-object afbeelden)
+  - De methode initialiseHTML() moet voorlopig enkel de methode getData() oproepen (eventueel kan je als test met console.log het repository-object afbeelden).
   Uiteindelijk zal deze methode ook de landen moeten weergeven op de webpagina, zie hieronder.
 
 - Implementeer de methode countriesToHTML die een countries-array afbeeldt op de webpagina. Gebruik vervolgens deze methode in initialiseHTML() om bij het opstarten alle landen te tonen op de webpagina.
