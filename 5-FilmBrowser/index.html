@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Film browser</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="s12">
+                <h4>Film Browser</h4>
+            </div>
+        </header>
+        <main>
+            <header class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Search" id="searchText" type="text" required class="validate">
+                    <a id="searchBtn" class="waves-effect waves-light btn-small"><i
+                            class="material-icons right">search</i>Search</a>
+                </div>
+            </header>
+            <div class="row">
+                <div id="films" class="blue-text text-darken-2">
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/filmBrowser.js" type="module"></script>
+</body>
+
+</html>

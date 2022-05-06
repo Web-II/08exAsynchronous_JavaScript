@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Trivia pursuit</title>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="css/trivia.css">
+</head>
+
+<body>
+	<div class="container">
+		<header class="row">
+			<div class="col offset-m1 s12 m10">
+				<h4>Trivial Pursuit</h4>
+			</div>
+		</header>
+		<main class="row">
+			<div class="col offset-m1 s12 m10">
+				<div class="card-panel blue lighten-2">
+					<div>
+						<span id="question"></span>
+						<span id="correct"></span>
+					</div>
+					<div id="answer"></div>
+				</div>
+				<div id="trivia" class="card blue-text text-darken-2">
+				</div>
+			</div>
+		</main>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="js/trivia-quiz.js" type="module"></script>
+</body>
+
+</html>

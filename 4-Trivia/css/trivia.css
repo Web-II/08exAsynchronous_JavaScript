@@ -1,0 +1,40 @@
+h1 {
+  font-size: 2.28rem;
+  margin: 1.52rem 0 0 0;
+}
+
+.card-panel {
+  min-height: 102px;
+}
+
+#answer {background-color:  #1976D2; color: white;}
+
+.card-panel div:first-child {
+  display: flex;
+  justify-content: space-between ;
+
+}
+
+
+label {
+  color: #000 !important;
+}
+.card-action:first-of-type {
+  min-height: 163px;
+}
+
+.card-content {
+  min-height: 129px;
+}
+
+span {
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.hide {
+  display: none;
+}

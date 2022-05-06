@@ -1,0 +1,76 @@
+{
+    "Search": [
+        {
+            "Title": "The Shape of Water",
+            "Year": "2017",
+            "imdbID": "tt5580390",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNGNiNWQ5M2MtNGI0OC00MDA2LWI5NzEtMmZiYjVjMDEyOWYzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Hell or High Water",
+            "Year": "2016",
+            "imdbID": "tt2582782",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTg4NDA1OTA5NF5BMl5BanBnXkFtZTgwMDQ2MDM5ODE@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Water for Elephants",
+            "Year": "2011",
+            "imdbID": "tt1067583",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTQzMDU3NDEwN15BMl5BanBnXkFtZTcwMTI3MDU0NA@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Lady in the Water",
+            "Year": "2006",
+            "imdbID": "tt0452637",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMjEyNTc0NTk5M15BMl5BanBnXkFtZTcwMDE5NzkyMw@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "The Water Diviner",
+            "Year": "2014",
+            "imdbID": "tt3007512",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMjMzODA4NDYzM15BMl5BanBnXkFtZTgwMTc0Mzc0NDE@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Dark Water",
+            "Year": "2005",
+            "imdbID": "tt0382628",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BOTcyMDQ3MjEtNjZkOS00ZDQ0LWE1YWMtYTNkNmNiZjU0MzhhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+        },
+        {
+            "Title": "The SpongeBob Movie: Sponge Out of Water",
+            "Year": "2015",
+            "imdbID": "tt2279373",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNzg3ODVjOTYtMDY1OS00NWY0LWEyZDctNGEzYjExZWMzYzY3XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_SX300.jpg"
+        },
+        {
+            "Title": "Open Water",
+            "Year": "2003",
+            "imdbID": "tt0374102",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ5ODAyOTk3OF5BMl5BanBnXkFtZTcwNzQ1NjYyMQ@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "The Water Horse",
+            "Year": "2007",
+            "imdbID": "tt0760329",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTc1MjcxMjg5OV5BMl5BanBnXkFtZTcwNDE1NzYzMw@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Dark Water",
+            "Year": "2002",
+            "imdbID": "tt0308379",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYzE5MGUyYTUtODMxZi00Y2VjLTlmYjItY2NjMDkzYmYzODY4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+        }
+    ],
+    "totalResults": "2508",
+    "Response": "True"
+}

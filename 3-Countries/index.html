@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countries</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1>Countries - capital - region - flag</h1>
+      </header>
+      <main>
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" />
+        </div>
+        <div id="number"></div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Capital</th>
+              <th>Region</th>
+              <th>Flag</th>
+            </tr>
+          </thead>
+          <tbody id="countries"></tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "How many books are in the Chronicles of Narnia series?",
+            "correct_answer": "7",
+            "incorrect_answers": [
+                "6",
+                "8",
+                "5"
+            ]
+        },
+        {
+            "category": "Politics",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Due to the Nagoya Resolution, China agreed to allow Taiwan to compete separately in international sporting events under what name?",
+            "correct_answer": "Chinese Taipei",
+            "incorrect_answers": [
+                "Chinese Taiwan",
+                "Republic of Taiwan",
+                "Republic of Taipei "
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Against which country did the Dutch Republic fight the Eighty Years&#039; War?",
+            "correct_answer": "Spain",
+            "incorrect_answers": [
+                "France",
+                "England",
+                "Portugal"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In &quot;A Certain Scientific Railgun&quot;, how many &quot;sisters&quot; did Accelerator have to kill to achieve the rumored level 6?",
+            "correct_answer": "20,000",
+            "incorrect_answers": [
+                "128",
+                "10,000",
+                "5,000"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "According to a song by Belinda Carlisle, Heaven is a place on what?",
+            "correct_answer": "Earth",
+            "incorrect_answers": [
+                "Venus",
+                "Mars",
+                "Uranus"
+            ]
+        },
+        {
+            "category": "Mythology",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of the following is NOT a god in Norse Mythology.",
+            "correct_answer": "Jens",
+            "incorrect_answers": [
+                "Loki",
+                "Tyr",
+                "Snotra"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Harvard University is located in which city?",
+            "correct_answer": "Cambridge",
+            "incorrect_answers": [
+                "Providence",
+                "New York",
+                "Washington D.C."
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "Linus Sebastian is the creator of the Linux kernel, which went on to be used in Linux, Android, and Chrome OS.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the name of the main antagonists in Battlestar Galactica?",
+            "correct_answer": "The Cylons",
+            "incorrect_answers": [
+                "The Collective",
+                "The Federation",
+                "The Rebels"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In &quot;Star Trek: Voyager&quot;, which episode did Voyager establish real-time communication with Starfleet Headquarters?",
+            "correct_answer": "Pathfinder",
+            "incorrect_answers": [
+                "Message In A Bottle",
+                "Someone To Watch Over Me",
+                "Counterpoint"
+            ]
+        }
+    ]
+}

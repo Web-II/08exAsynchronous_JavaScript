@@ -1,0 +1,14 @@
+label{
+	color: black;
+	font-size: 1.1em;
+}
+p{
+	font-weight: 500;
+}
+li{
+	font-size: 1.1em;
+}
+img{
+	padding: .2em;
+	cursor: pointer;
+}
