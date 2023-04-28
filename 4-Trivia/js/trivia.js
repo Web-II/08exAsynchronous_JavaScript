@@ -1,4 +1,4 @@
-export class Trivia {
+export default class Trivia {
   #category;
   #difficulty;
   #question;
@@ -27,8 +27,5 @@ export class Trivia {
   get correctAnswer() {
     return this.#correctAnswer;
   }
-  isCorrectAnswer(answer) {
-    // TODO
-
-  }
+  isCorrectAnswer(answer) {}
 }

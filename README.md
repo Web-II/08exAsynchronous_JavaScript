@@ -9,7 +9,7 @@ Bij het openen van de webpagina index.html moeten de publicatiedatum en de titel
 
 ![nieuwsbericht](docs/nieuwsberichten.png)
 
-De start-bestanden bevatten reeds een klasse Bericht. Importeer deze klasse in main.js en maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
+De start-bestanden bevatten reeds een klasse Bericht en Berichten. Importeer Berichten in index.js en zorg ervoor dat de applicatie wordt gestart. Zorg ervoor dat in de constructor van Berichten de correcte url wordt toegekend om de data op te halen zorg ervoor dat deze worden opgehaald, maak hiervoor gebruik van de functie getData(url). Maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
 
 Werk met de Fetch API maar zonder gebruik te maken van async/await.
 
@@ -39,7 +39,9 @@ Via het tekstvak moet de gebruiker kunnen filteren:
 
 Het aantal landen plaats je op de webpagina in het div-element `#number` de landen zelf in `#countries`.
 
-Je werkt met drie modules: country.js (klasse Country), countriesRepository.js (klasse CountriesRepository) en countries.js (entry point van de applicatie en de klasse CountriesComponent)
+Je werkt met vier modules: index.js (entry point van de applicatie), country.js (klasse Country), countriesRepository.js (klasse CountriesRepository) en countriesComponent.js (klasse CountriesComponent)
+
+- Zorg ervoor dat index.js de applicatie start.
 
 - Implementeer in de file country.js de klasse Country.
 Een Country-object bevat countryName, capital, region en flag.
@@ -48,25 +50,26 @@ Exporteer de klasse en importeer ze in de file countriesRepository.js.
 - Implementeer in CountriesRepository de methodes:
  addCountry() die een nieuw Country-object creëert en toevoegt aan de array #countries.
 
-- Exporteer de klasse CountriesRepository en importeer ze in countries.js.
+- Exporteer de klasse CountriesRepository en importeer ze in countriesComponent.js.
 
-- Creëer in CountriesComponent de methodes initialiseHTML() en getData():
+- Implementeer de CountriesComponent module:
+  - Zorg ervoor dat de constructor de url de juiste string krijgt om de data op te halen: /data/countries.json. 
+  - Implementeer in CountriesComponent de methodes #initialiseHTML() en #getData(url):
 
-  - De methode getData() moet op basis van /data/countries.json de repository opvullen. Maak bij deze methode gebruik van async/await.
-  Hierbij moet 'countryName' zowel de 'name' als de 'nativeName' uit de objecten van de API bevatten. Zo moet de 'countryName' voor Duitsland de string 'Germany - Deutschland' zijn.
-  - De methode initialiseHTML() moet voorlopig enkel de methode getData() oproepen (eventueel kan je als test met console.log het repository-object afbeelden).
-  Uiteindelijk zal deze methode ook de landen moeten weergeven op de webpagina, zie hieronder.
-
-- Implementeer de methode countriesToHTML die een countries-array afbeeldt op de webpagina. Gebruik vervolgens deze methode in initialiseHTML() om bij het opstarten alle landen te tonen op de webpagina.
+    - De methode #getData(url) moet op basis van de url de repository opvullen. Maak bij deze methode gebruik van async/await.
+    Hierbij moet 'countryName' zowel de 'name' als de 'nativeName' uit de objecten van de API bevatten. Zo moet de 'countryName' voor Duitsland de string 'Germany - Deutschland' zijn.
+    - De methode #initialiseHTML() moet voorlopig enkel de methode #getData(url) oproepen (eventueel kan je als test met console.log het repository-object afbeelden).
+    Uiteindelijk zal deze methode ook de landen moeten weergeven op de webpagina, zie hieronder.
+    - Implementeer de methode #countriesToHTML die een countries-array afbeeldt op de webpagina. Gebruik vervolgens deze methode in #initialiseHTML() om bij het opstarten alle landen te tonen op de webpagina.
 
   Start je applicatie en controleer of alle landen worden weergegeven op de webpagina.
 
-- Implementeer in de repository de methode filteredCountries(searchstring) die een gefilterde landen-array teruggeeft op basis van een zoekString.
+- Implementeer in de CountriesRepository klasse de methode filteredCountries(searchstring) die een gefilterde landen-array teruggeeft op basis van een zoekString.
 
   Een searchstring='be' betekent dat de gefilterde landen-array alle landen moet bevatten die beginnen met 'be'. Je werkt case-insensitive.
 
-- Creëer een methode setupSearchBox() die de event handler voor de search box instelt.
-Roep de methode op in initialiseHTML() en controleer of alles correct werkt.
+- Maak gebruik van de methode #setupSearchBox() die de event handler voor de search box instelt.
+Roep de methode op in #initialiseHTML() en controleer of alles correct werkt.
 
 
 ## Oefening 4:  Trivia quiz.
@@ -100,10 +103,12 @@ Voor de opmaak en layout wordt gebruik gemaakt van [Materializecss](https://mate
 
 Bekijk heel grondig de HTML (hoeft niet gewijzigd te worden).
 
+Implementeer de index.js zodat de applicatie opstart.
+
 Bekijk de Class Trivia. Deze bevat reeds de gepaste getters. Implementeer de methode 'isCorrectAnswer(answer)', deze retourneert een boolean. 
 
-De code heeft ook een klasse TriviaGame. Deze zal de 10 random trivia bijhouden en de nodige methodes voorzien om de TriviaComponent te kunnen uitvoeren (zie verder), maw om de quiz te kunnen spelen.
-De TriviaGame:
+De code heeft ook een klasse TriviaRepository. Deze zal de 10 random trivia bijhouden en de nodige methodes voorzien om de TriviaComponent te kunnen uitvoeren (zie verder), maw om de quiz te kunnen spelen.
+De TriviaRepository:
 - de 10 trivia vragen worden bijgehouden in de property '#trivias'.
 - van de antwoorden houden we in de property '#answers' bij of het antwoord al dan niet correct was (true of false). 
 Vervolgens zijn volgende getters voorzien:
@@ -119,11 +124,11 @@ De methodes van deze klasse zijn:
 
 Vervolgens is er nog de klasse TriviaComponent. 
 - Deze bevat alle members om Trivia te spelen. 
-- En heeft uiteraard een TriviaGame object nodig en moet de data ophalen: getData().
-- de methode getData() moet met behulp van de Fetch API, de 10 Trivia ophalen bij de Web api.
-    - indien dit succesvol gebeurt worden de Objecten van de api toegevoegd als Trivia Objecten aan de array van het TriviaGame object, gebruik hiervoor de method 'addTrivias(dataObjecten)' van het triviaGame object. Vervolgens wordt met de methode showTrivia() de quiz opgestart en de eerste vraag weergegeven op de html-pagina.
+- Het heeft uiteraard een TriviaRepository object nodig en moet de data ophalen: #getData(url), daarvoor heeft het de url nodig om de data op te halen. Vervolgens worden de data opgehaald en de eerste vraag weergegeven, dit gebeurt in de methode #initialiseHTML(). Deze methode haalt de data op met #getData(url).
+- de methode #getData(url) moet met behulp van de Fetch API, de 10 Trivia ophalen bij de Web api.
+    - indien dit succesvol gebeurt worden de Objecten van de api toegevoegd als Trivia Objecten aan de array van het TriviaRepository object, gebruik hiervoor de method 'addTrivias(dataObjecten)' van het triviaRepository object. Vervolgens wordt met de methode #showTrivia() de quiz opgestart en de eerste vraag weergegeven op de html-pagina.
     - indien dit niet succesvol gebeurt wordt een gepast bericht naar de console gestuurd (dit mag eventueel ook via een alert of op de webpagina zelf) en is de quiz afgelopen.
-- de methode showTrivia zal de webpagina weergeven en is reeds gedeeltelijk geïmplementeerd. Implementeer zelf nog volgende items:
+- de methode #showTrivia zal de webpagina weergeven en is reeds gedeeltelijk geïmplementeerd. Implementeer zelf nog volgende items:
     - het weergeven van het aantal reeds gestelde vragen tov het totaal aantal vragen (span met id="question")
     - controleer of het antwoord correct was
     - implementeer het weergeven van het aantal reeds correcte antwoorden tov. het totaal aantal gegeven antwoorden (span met id="correct")
@@ -157,6 +162,8 @@ Voor de opmaak en layout wordt opnieuw gebruikgemaakt van [Materializecss](https
 
 Bekijk heel grondig de HTML (hoeft niet gewijzigd te worden).
 
+Implementeer de index.js zodat de applicatie opstart.
+
 De start-bestanden bevatten reeds een klasse Film met de gepaste getters. Deze klasse heeft een property detail, om de details van een film op te slaan (data ontvangen via een tweede request naar de api).
 
 De code heeft ook een klasse FilmRepository. Deze zal de films bijhouden en de nodige methodes voorzien om de FilmBrowserComponent te kunnen uitvoeren (zie verder), maw om de film database te bevragen en weer te geven.
@@ -169,19 +176,19 @@ De methodes van deze klasse zijn:
 - addDetail(id,objDetail): haalt het juiste film Object op uit de array en voegt de details toe (zie screenshot detail en detail property van film object).
 - getFilmById(id): retourneert film overeenkomstig het id (parameter).
 
-Vervolgens is er nog de klasse FilmBrowserComponent.
-- Deze bevat alle members en methods om de film database te bevragen en de films weer te geven en ook de details van de aangeklikte film weer te geven.
-- Deze klasse heeft uiteraard een FilmRepository object nodig en moet de data ophalen: searchFilms(searchText).
+Vervolgens is er nog de klasse FilmComponent.
+- Deze bevat alle members en methods om de externe film database te bevragen en de films weer te geven en ook de details van de aangeklikte film weer te geven.
+- Deze klasse heeft uiteraard een FilmRepository object nodig en moet de data ophalen: #searchFilms(searchText). hij maakt hierbij gebruik van de volgende url: http://www.omdbapi.com/?s=zoekterm&apikey=57927523, waarbij de zoekterm vervangen wordt door de ingegeven zoekterm op de webpagina.
 - de methode searchFilms(searchText) zal door gebruik te maken van de fetch API de films ophalen door de searchText mee te geven in het api request te halen:
     - indien dit succesvol gebeurt worden 
-        - de Objecten, indien er een zoekresultaat is, van de api toegevoegd als Film Objecten aan de array van de repository, gebruik hiervoor de method 'addFilms(dataObjecten)' van het filmRepository object. Vervolgens worden deze weergegeven op de pagina ,showFilms() method.
-        - een gepaste boodschap gegeven - showNoResult() method, indien geen zoekresultaat is.
+        - de Objecten, indien er een zoekresultaat is, van de api toegevoegd als Film Objecten aan de array van de repository, gebruik hiervoor de method 'addFilms(dataObjecten)' van het filmRepository object. Vervolgens worden deze weergegeven op de pagina, #showFilms() method.
+        - een gepaste boodschap gegeven - #showMessage(message) method, indien geen zoekresultaat is.
     - indien dit niet succesvol gebeurt, dan wordt een gepast bericht naar de console (dit mag eventueel ook via een alert of op de webpagina zelf) gestuurd.
-- de methode getFilm(id) zal, nadat op de knop details van een film is geklikt, de details data ophalen bij de api via een http request:
-    - indien dit succesvol gebeurt worden 
-        - de filmdata, indien er een zoekresultaat is, van de api toegevoegd als Film object details aan de overeenkomstige film uit de repository, gebruik hiervoor de method 'addDetail(id, objDetail)'  Vervolgens wordt de film weergegeven op de pagina ,showDetailFilm(film) method.
-        - een gepaste boodschap gegeven - showNoResult() method, indien geen zoekresultaat is.
+- de methode #getFilm(id) zal, nadat op de knop details van een film is geklikt, de details data ophalen bij de api via een http request (url: http://www.omdbapi.com/?i=idFilm&plot=full&apikey=57927523, waarbij idFilm wordt vervangen door het id als argument meegegeven).
+    - indien dit succesvol gebeurt, worden 
+        - de filmdata, indien er een zoekresultaat is, van de api toegevoegd als Film object details aan de overeenkomstige film uit de repository, gebruik hiervoor de method 'addDetail(id, objDetail)'  Vervolgens wordt de film weergegeven op de pagina ,#showDetailFilm(film) method.
+        - een gepaste boodschap gegeven - showMessage(message) method, indien geen zoekresultaat is.
     - indien dit niet succesvol gebeurt, dan wordt een gepast bericht naar de console (dit mag eventueel ook via een alert of op de webpagina zelf) gestuurd.
-- de methode showFilms() zal de films op de webpagina weergeven. Elke film bevat een knop om de details te bekijken getFilm(id).
-- de methode showFilmsDetail(film) zal de film op de webpagina weergeven. Als er vervolgens geklikt wordt op de afbeelding van de film wordt er teruggekeerd naar het overzicht van de films - showFilms().
+- de methode #showFilms() zal de films op de webpagina weergeven. Elke film bevat een knop om de details te bekijken #getFilm(id).
+- de methode #showFilmsDetail(film) zal de film op de webpagina weergeven. Als er vervolgens geklikt wordt op de afbeelding van de film wordt er teruggekeerd naar het overzicht van de films - #showFilms().
 

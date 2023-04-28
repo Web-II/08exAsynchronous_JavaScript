@@ -1,18 +1,28 @@
-import { TriviaGame } from './triviaGame.js';
+import TriviaRepository from './triviaRepository.js';
 
-class TriviaComponent {
-  #triviaGame;
+export default class TriviaComponent {
+  #triviaRepository;
+  #url;
 
   constructor() {
-    this.getData();
-  }
-  getData() {
-    // TODO
+    this.#triviaRepository = new TriviaRepository();
+    this.#url = 'https://opentdb.com/api.php?amount=10'; //'./data/exampleResponseApi.json'
+    this.#initialiseHTML();
   }
 
-  showTrivia() {
+  #initialiseHTML() {
+    
+  }
+  #getData(url) {
+    
+  }
+
+  #showTrivia() {
     const triviaHTML = document.getElementById('trivia');
     triviaHTML.innerHTML = '';
+
+    // de volgende vraag
+    const trivia = this.#triviaRepository.trivia;
 
     //TODO
     // #question opvullen:
@@ -69,12 +79,11 @@ class TriviaComponent {
     }
 
     // eventhandlers instellen
-    document.getElementById('send').onclick = () =>
-      this.sendClickHandler(trivia);
-    document.getElementById('next').onclick = () => this.nextClickHander();
+    document.getElementById('send').onclick = () => this.#sendClickHandler(trivia);
+    document.getElementById('next').onclick = () => this.#nextClickHander();
   }
 
-  sendClickHandler(trivia) {
+  #sendClickHandler(trivia) {
     // als er geen enkele radio button checked is moet er niets gebeuren
     if (!document.querySelector('input[name="group"]:checked')) return;
 
@@ -97,21 +106,16 @@ class TriviaComponent {
     document.getElementById('next').classList.remove('hide');
 
     // als het spel beëindigd is
-    if (this.#triviaGame.checkEndGame()) {
+    if (this.#triviaRepository.checkEndGame()) {
       // next-knop uitschakelen
       document.getElementById('next').classList.add('disabled');
     }
   }
-  nextClickHander() {
+  #nextClickHander() {
     // antwoord wissen
     document.getElementById('answer').innerHTML = '';
     // volgende vraag afbeelden
-    this.showTrivia();
+    this.#showTrivia();
   }
 }
 
-const init = function () {
-  new TriviaComponent();
-};
-
-window.onload = init;

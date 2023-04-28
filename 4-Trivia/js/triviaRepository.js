@@ -1,8 +1,12 @@
-import { Trivia } from './trivia.js';
+import Trivia from './trivia.js';
 
-export class TriviaGame {
+export default class TriviaRepository {
   #trivias = [];
   #answers = [];
+
+  get trivias() {
+    return this.#trivias;
+  }
 
   get numberOfTrivias() {
     return this.#trivias.length;
@@ -14,26 +18,13 @@ export class TriviaGame {
 
   // geeft de volgende trivia terug (werkt op basis van
   // het aantal reeds gegeven antwoorden).
-  get trivia() {
-    // TODO
-  }
+  get trivia() {}
 
-  get correctAnswers() {
-    // TODO 
-    
-  }
+  get correctAnswers() {}
 
-  addTrivias(dataObjects) {
-    // TODO
+  addTrivias(dataObjects) {}
 
-  }
+  checkAnswer(answer) {}
 
-  checkAnswer(answer) {
-    // TODO
-
-  }
-  
-  checkEndGame() {
-    // TODO
-  }
+  checkEndGame() {}
 }

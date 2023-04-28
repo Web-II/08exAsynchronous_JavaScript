@@ -1,4 +1,4 @@
-export class Bericht {
+export default class Bericht {
   #publicatiedatum;
   #titel;
   #url;
@@ -22,6 +22,6 @@ export class Bericht {
 
   toHTMLString() {
     return `<p>${this.publicatiedatum} -
-      <a href="${this.url}">${this.titel}</a></p>`;
+      <a href="${this.url}" target="_blank">${this.titel}</a></p>`;
   }
 }
