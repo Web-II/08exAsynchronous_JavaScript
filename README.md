@@ -9,7 +9,7 @@ Bij het openen van de webpagina index.html moeten de publicatiedatum en de titel
 
 ![nieuwsbericht](docs/nieuwsberichten.png)
 
-De start-bestanden bevatten reeds een klasse Bericht en Berichten. Importeer Berichten in index.js en zorg ervoor dat de applicatie wordt gestart. Zorg ervoor dat in de constructor van Berichten de correcte url wordt toegekend om de data op te halen zorg ervoor dat deze worden opgehaald, maak hiervoor gebruik van de functie getData(url). Maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
+De start-bestanden bevatten reeds een klasse Bericht en Berichten. Importeer Berichten in index.js en zorg ervoor dat de applicatie wordt gestart. Zorg ervoor dat in de constructor van Berichten de correcte url wordt toegekend om de data op te halen zorg ervoor dat deze worden opgehaald, maak hiervoor gebruik van de method #getData(). Maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
 
 Werk met de Fetch API maar zonder gebruik te maken van async/await.
 
@@ -54,11 +54,11 @@ Exporteer de klasse en importeer ze in de file countriesRepository.js.
 
 - Implementeer de CountriesComponent module:
   - Zorg ervoor dat de constructor de url de juiste string krijgt om de data op te halen: /data/countries.json. 
-  - Implementeer in CountriesComponent de methodes #initialiseHTML() en #getData(url):
+  - Implementeer in CountriesComponent de methodes #initialiseHTML() en #getData():
 
-    - De methode #getData(url) moet op basis van de url de repository opvullen. Maak bij deze methode gebruik van async/await.
+    - De methode #getData() moet op basis van de url de repository opvullen. Maak bij deze methode gebruik van async/await.
     Hierbij moet 'countryName' zowel de 'name' als de 'nativeName' uit de objecten van de API bevatten. Zo moet de 'countryName' voor Duitsland de string 'Germany - Deutschland' zijn.
-    - De methode #initialiseHTML() moet voorlopig enkel de methode #getData(url) oproepen (eventueel kan je als test met console.log het repository-object afbeelden).
+    - De methode #initialiseHTML() moet voorlopig enkel de methode #getData() oproepen (eventueel kan je als test met console.log het repository-object afbeelden).
     Uiteindelijk zal deze methode ook de landen moeten weergeven op de webpagina, zie hieronder.
     - Implementeer de methode #countriesToHTML die een countries-array afbeeldt op de webpagina. Gebruik vervolgens deze methode in #initialiseHTML() om bij het opstarten alle landen te tonen op de webpagina.
 
@@ -124,8 +124,8 @@ De methodes van deze klasse zijn:
 
 Vervolgens is er nog de klasse TriviaComponent. 
 - Deze bevat alle members om Trivia te spelen. 
-- Het heeft uiteraard een TriviaRepository object nodig en moet de data ophalen: #getData(url), daarvoor heeft het de url nodig om de data op te halen. Vervolgens worden de data opgehaald en de eerste vraag weergegeven, dit gebeurt in de methode #initialiseHTML(). Deze methode haalt de data op met #getData(url).
-- de methode #getData(url) moet met behulp van de Fetch API, de 10 Trivia ophalen bij de Web api.
+- Het heeft uiteraard een TriviaRepository object nodig en moet de data ophalen: #getData(), daarvoor heeft het de url nodig om de data op te halen. Vervolgens worden de data opgehaald en de eerste vraag weergegeven, dit gebeurt in de methode #initialiseHTML(). Deze methode haalt de data op met #getData().
+- de methode #getData() moet met behulp van de Fetch API, de 10 Trivia ophalen bij de Web api.
     - indien dit succesvol gebeurt worden de Objecten van de api toegevoegd als Trivia Objecten aan de array van het TriviaRepository object, gebruik hiervoor de method 'addTrivias(dataObjecten)' van het triviaRepository object. Vervolgens wordt met de methode #showTrivia() de quiz opgestart en de eerste vraag weergegeven op de html-pagina.
     - indien dit niet succesvol gebeurt wordt een gepast bericht naar de console gestuurd (dit mag eventueel ook via een alert of op de webpagina zelf) en is de quiz afgelopen.
 - de methode #showTrivia zal de webpagina weergeven en is reeds gedeeltelijk geïmplementeerd. Implementeer zelf nog volgende items:
@@ -179,7 +179,7 @@ De methodes van deze klasse zijn:
 Vervolgens is er nog de klasse FilmComponent.
 - Deze bevat alle members en methods om de externe film database te bevragen en de films weer te geven en ook de details van de aangeklikte film weer te geven.
 - Deze klasse heeft uiteraard een FilmRepository object nodig en moet de data ophalen: #searchFilms(searchText). hij maakt hierbij gebruik van de volgende url: http://www.omdbapi.com/?s=zoekterm&apikey=57927523, waarbij de zoekterm vervangen wordt door de ingegeven zoekterm op de webpagina.
-- de methode searchFilms(searchText) zal door gebruik te maken van de fetch API de films ophalen door de searchText mee te geven in het api request te halen:
+- de methode #searchFilms(searchText) zal door gebruik te maken van de fetch API de films ophalen door de searchText mee te geven in het api request te halen:
     - indien dit succesvol gebeurt worden 
         - de Objecten, indien er een zoekresultaat is, van de api toegevoegd als Film Objecten aan de array van de repository, gebruik hiervoor de method 'addFilms(dataObjecten)' van het filmRepository object. Vervolgens worden deze weergegeven op de pagina, #showFilms() method.
         - een gepaste boodschap gegeven - #showMessage(message) method, indien geen zoekresultaat is.

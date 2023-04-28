@@ -9,7 +9,7 @@ class CountriesComponent {
 
   #initialiseHTML() {}
 
-  #getData(url) {}
+  #getData() {}
 
   #setupSearchBox() {
     const searchBox = document.getElementById('search');

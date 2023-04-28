@@ -13,7 +13,7 @@ export default class TriviaComponent {
   #initialiseHTML() {
     
   }
-  #getData(url) {
+  #getData() {
     
   }
 

@@ -6,6 +6,6 @@ export default class Berichten {
         //'https://data.stad.gent/api/records/1.0/search/?dataset=recente-nieuwsberichten-van-stadgent&q=&rows=5';
         
     }
-    #getData(url){}
+    #getData(){}
     #berichtenToHTML(berichten) {}
 }

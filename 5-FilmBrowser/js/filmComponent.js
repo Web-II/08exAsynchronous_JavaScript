@@ -8,18 +8,18 @@ export default class FilmComponent {
     this.#url = 'http://www.omdbapi.com/'
     document.getElementById('searchBtn').onclick = () => {
       this.#searchFilms(
-        this.#url,document.getElementById('searchText').value
+        document.getElementById('searchText').value
       );
     };
   }
 
-  #searchFilms(url,searchText) {
+  #searchFilms(searchText) {
     if (searchText !== '') {
       // films opvragen adhv volgende url: http://www.omdbapi.com/?s=zoekterm&apikey=57927523
     }
   }
 
-  #getFilm(url,id) {
+  #getFilm(id) {
     // details van één film opvragen adhv volgende url: http://www.omdbapi.com/?i=idFilm&plot=full&apikey=57927523
     
   }
