@@ -9,7 +9,7 @@ Bij het openen van de webpagina index.html moeten de publicatiedatum en de titel
 
 ![nieuwsbericht](docs/nieuwsberichten.png)
 
-De start-bestanden bevatten reeds een klasse Bericht en Berichten. Importeer Berichten in index.js en zorg ervoor dat de applicatie wordt gestart. Zorg ervoor dat in de constructor van Berichten de correcte url wordt toegekend om de data op te halen zorg ervoor dat deze worden opgehaald, maak hiervoor gebruik van de method #getData(). Maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
+De start-bestanden bevatten reeds een klasse Bericht en BerichtenComponent. Importeer BerichtenComponent in index.js en zorg ervoor dat de applicatie wordt gestart. Zorg ervoor dat in de constructor van BerichtenComponent de correcte url wordt toegekend om de data op te halen zorg ervoor dat deze worden opgehaald, maak hiervoor gebruik van de method #getData(). Maak voor het weergeven van de nieuwsberichten op de webpagina tevens gebruik van de instance method Bericht.toHTMLString()
 
 Werk met de Fetch API maar zonder gebruik te maken van async/await.
 
