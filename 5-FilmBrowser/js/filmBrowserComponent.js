@@ -4,21 +4,24 @@ class FilmBrowserComponent {
   #filmRepository;
   constructor() {
     this.#filmRepository = new FilmRepository();
+    document.getElementById('searchBtn').onclick = () => {
+      // TODO
+    };
   }
 
-  searchFilms(searchText) {
+  #searchFilms(searchText) {
     if (searchText !== '') {
       // TODO:
       // films opvragen
     }
   }
 
-  getFilm(id) {
+  #getFilm(id) {
     // TODO
     // details van één film opvragen
   }
 
-  showFilms() {
+  #showFilms() {
     document.getElementById('films').innerHTML = '';
     this.#filmRepository.films.forEach((film) => {
       document.getElementById('films').insertAdjacentHTML(
@@ -48,7 +51,7 @@ class FilmBrowserComponent {
     });
   }
 
-  showDetailFilm(film) {
+  #showDetailFilm(film) {
     let details = '';
     Object.entries(film.detail).forEach(([key, value]) => {
       details += `<li><label>${key}:</label> ${value}</li>`;
@@ -81,7 +84,7 @@ class FilmBrowserComponent {
     };
   }
 
-  showMessage(message) {
+  #showMessage(message) {
     document.getElementById('films').innerHTML = '';
     document.getElementById('films').insertAdjacentHTML(
       'beforeend',
@@ -94,11 +97,3 @@ class FilmBrowserComponent {
   }
 }
 
-const init = function () {
-  const filmBrowserComponent = new FilmBrowserComponent();
-  document.getElementById('searchBtn').onclick = () => {
-    // TODO
-  };
-};
-
-window.onload = init;
