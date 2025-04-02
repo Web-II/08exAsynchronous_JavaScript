@@ -116,64 +116,64 @@ We implementeren de code in verschillende stappen.
 
 STAP 1. Ophalen van de trivias en weergave in de console
 
-   ![trivia1.png](docs/trivia1.png)
+![trivia1.png](docs/trivia1.png)
 
-  - Implementeer `index.js` zodat de applicatie opstart.
-  - klasse `Trivia`. Deze bevat reeds de private attributen en de getters.
-  - klasse `TriviaRepository`. Deze zal de 10 random trivia bijhouden en de nodige methodes voorzien om de TriviaComponent te kunnen uitvoeren (zie verder), maw om de quiz te kunnen spelen. De TriviaRepository bevat:
-    - #trivias: houdt de 10 trivia vragen bij
-    - trivias (get): retourneert `#trivias`. Implementeer.
-    - addTrivias(dataObjecten) mapt de dataObjecten (bekomen met de Fetch API) naar Trivia objects en voegt ze toe aan de trivia's array. Bekijk een mogelijke response van de api in het bestand 'exampleResponseApi.json': hier zie je dat het juiste antwoord (correct_answer) en de foute antwoorden (incorrect_answers) twee verschillende properties zijn. In een Trivia object moet 'answers' alle mogelijke antwoorden bevatten, dus het correcte antwoord en de foute antwoorden.
-  - klasse `TriviaComponent`:
-    - heeft uiteraard een TriviaRepository object #triviaRepository nodig evenals de url #url om de data op te halen
-    - constructor : bekijk de code
-    - #getData(): haal met behulp van de Fetch API de 10 Trivia op bij de Web api. Hou de 10 trivia's bij in #triviaRepository(via de methode `addTrivias`). Als dit mislukt geef een melding in de div tag met id `answer`.
-    - #initialiseHTML: haal de 10 trivia's op (`#getData`) en geef de opgehaalde trivias voorlopig weer in de console
+- Implementeer `index.js` zodat de applicatie opstart.
+- klasse `Trivia`. Deze bevat reeds de private attributen en de getters.
+- klasse `TriviaRepository`. Deze zal de 10 random trivia bijhouden en de nodige methodes voorzien om de TriviaComponent te kunnen uitvoeren (zie verder), maw om de quiz te kunnen spelen. De TriviaRepository bevat:
+  - #trivias: houdt de 10 trivia vragen bij
+  - trivias (get): retourneert `#trivias`. Implementeer.
+  - addTrivias(dataObjecten) mapt de dataObjecten (bekomen met de Fetch API) naar Trivia objects en voegt ze toe aan de trivia's array. Bekijk een mogelijke response van de api in het bestand 'exampleResponseApi.json': hier zie je dat het juiste antwoord (correct_answer) en de foute antwoorden (incorrect_answers) twee verschillende properties zijn. In een Trivia object moet 'answers' alle mogelijke antwoorden bevatten, dus het correcte antwoord en de foute antwoorden.
+- klasse `TriviaComponent`:
+  - heeft uiteraard een TriviaRepository object #triviaRepository nodig evenals de url #url om de data op te halen
+  - constructor : bekijk de code
+  - #getData(): haal met behulp van de Fetch API de 10 Trivia op bij de Web api. Hou de 10 trivia's bij in #triviaRepository(via de methode `addTrivias`). Als dit mislukt geef een melding in de div tag met id `answer`.
+  - #initialiseHTML: haal de 10 trivia's op (`#getData`) en geef de opgehaalde trivias voorlopig weer in de console
 
 STAP 2. Weergave van de eerste trivia in de webpagina.
 
-   ![trivia2.png](docs/trivia2.png)
+![trivia2.png](docs/trivia2.png)
 
-  - klasse `TriviaRepository`.
-    - de getter `trivia` dient momenteel de eerste trivia te retourneren. Later passen we de getter aan en halen we de volgende trivia op.
-  - klasse `TriviaComponent`
-    - methode #showTrivia : bekijk de code. Roep deze methode aan in `#initialiseHTML()`;
+- klasse `TriviaRepository`.
+  - de getter `trivia` dient momenteel de eerste trivia te retourneren. Later passen we de getter aan en halen we de volgende trivia op.
+- klasse `TriviaComponent`
+  - methode #showTrivia : bekijk de code. Roep deze methode aan in `#initialiseHTML()`;
 
-  Voer de code uit. De eerste trivia wordt weergegeven.
+Voer de code uit. De eerste trivia wordt weergegeven.
 
 STAP 3. Klik op de Submit answer knop en controleer of het antwoord klopt.
 
-   ![trivia3.png](docs/trivia3.png)
+![trivia3.png](docs/trivia3.png)
 
-  - klasse `Trivia`.
-    - Implementeer de methode 'isCorrectAnswer(answer)', deze retourneert een boolean.
-  - klasse `TriviaRepository`.
-    - van de antwoorden houden we in de array '#answers' bij of het antwoord al dan niet correct was (true of false).
-    - numberOfAnswers: geeft het aantal reeds gegeven antwoorden terug
-    - correctAswers: geeft het aantal reeds gegeven correcte antwoorden terug
-    - numberOfTrivias: geeft het aantal vragen terug
-    - checkAnswer(answer): retourneert true of false naargelang het antwoord al dan niet correct is en voegt dit toe (true of false) aan de collection van answers.
-    - checkEndGame(): retourneert true or false naargelang de quiz al dan niet ten einde is. De quiz is ten einde als het aantal Trivia gelijk is aan het aantal gegeven antwoorden.
-  - klasse `TriviaComponent`
-    - #showTrivia : Roept de methode #sendClickHandler aan als op de 'send' knop geklikt wordt. Bekijk de code
-    - #sendClickHandler: zal het antwoord controleren, het correcte antwoord weergeven evenals het aantal correcte antwoorden en het aantal reeds gegeven antwoorden. De next knop wordt weergegeven als niet einde spel. De methode is reeds gedeeltelijk geïmplementeerd. Implementeer zelf nog volgende items:
-      - controleer of het antwoord correct was
-      - implementeer het weergeven van het aantal reeds correcte antwoorden tov. het totaal aantal gegeven antwoorden (span met id="correct")
-      - implementeer het weergeven van het correcte antwoord (div met id="answer")
+- klasse `Trivia`.
+  - Implementeer de methode 'isCorrectAnswer(answer)', deze retourneert een boolean.
+- klasse `TriviaRepository`.
+  - van de antwoorden houden we in de array '#answers' bij of het antwoord al dan niet correct was (true of false).
+  - numberOfAnswers: geeft het aantal reeds gegeven antwoorden terug
+  - correctAswers: geeft het aantal reeds gegeven correcte antwoorden terug
+  - numberOfTrivias: geeft het aantal vragen terug
+  - checkAnswer(answer): retourneert true of false naargelang het antwoord al dan niet correct is en voegt dit toe (true of false) aan de collection van answers.
+  - checkEndGame(): retourneert true or false naargelang de quiz al dan niet ten einde is. De quiz is ten einde als het aantal Trivia gelijk is aan het aantal gegeven antwoorden.
+- klasse `TriviaComponent`
+  - #showTrivia : Roept de methode #sendClickHandler aan als op de 'send' knop geklikt wordt. Bekijk de code
+  - #sendClickHandler: zal het antwoord controleren, het correcte antwoord weergeven evenals het aantal correcte antwoorden en het aantal reeds gegeven antwoorden. De next knop wordt weergegeven als niet einde spel. De methode is reeds gedeeltelijk geïmplementeerd. Implementeer zelf nog volgende items:
+    - controleer of het antwoord correct was
+    - implementeer het weergeven van het aantal reeds correcte antwoorden tov. het totaal aantal gegeven antwoorden (span met id="correct")
+    - implementeer het weergeven van het correcte antwoord (div met id="answer")
 
-  Voer de code uit
+Voer de code uit
 
 STAP 4. Ophalen van de volgende trivia en de weergave van de trivia en aantal reeds gestelde vragen in de browser
 
-   ![trivia4.png](docs/trivia4.png)
+![trivia4.png](docs/trivia4.png)
 
-  - klasse `TriviaRepository`
-    - de getter trivia retourneert de volgende trivia op.
-  - klasse `TriviaComponent`
-    - #showTrivia : Bekijk de code. De methode roept #sendClickHandler aan als op de knop geklikt wordt. Implementeer nog het weergeven van het aantal reeds gestelde vragen tov het totaal aantal vragen (span met id="question")
-    - #nextClickHander: geeft de volgende trivia weer. Bekijk de code
+- klasse `TriviaRepository`
+  - de getter trivia retourneert de volgende trivia op.
+- klasse `TriviaComponent`
+  - #showTrivia : Bekijk de code. De methode roept #sendClickHandler aan als op de knop geklikt wordt. Implementeer nog het weergeven van het aantal reeds gestelde vragen tov het totaal aantal vragen (span met id="question")
+  - #nextClickHander: geeft de volgende trivia weer. Bekijk de code
 
-  Voer de code uit.
+Voer de code uit.
 
 ## Oefening 5: FilmBrowser.
 
@@ -185,23 +185,23 @@ De films worden opgevraagd via de volgende api: [Open Movie Database ](http://ww
 
 Start applicatie:
 
-![F1.png](/docs/F1.png 'Resultaat')
+![F1.png](docs/F1.png 'Resultaat')
 
 Resultaat na zoekterm 'star' ingeven en op search knop klikken.
 
-![F2.png](/docs/F2.png 'Resultaat')
+![F2.png](docs/F2.png 'Resultaat')
 
 Detail film:
 
-![F3.png](/docs/F3.png 'Resultaat')
+![F3.png](docs/F3.png 'Resultaat')
 
 Indien geen poster beschikbaar is (poster: N/A) wordt de 'No Image Available' afbeelding (zie map images) weergegeven.
 
-![F4.png](/docs/F4.png 'Resultaat')
+![F4.png](docs/F4.png 'Resultaat')
 
 Het klassendiagram
 
-![Film.png](/docs/Film.png 'Resultaat')
+![Film.png](docs/film.png 'Resultaat')
 
 Implementeer de applicatie in stapjes, en controleer telkens het resultaat. De uitleg over de methodes kan je hieronder vinden.
 
@@ -227,7 +227,8 @@ De klasse `FilmRepository`. Deze zal de films bijhouden en de nodige methodes vo
 
 De klasse `FilmBrowserComponent`.
 
-- Deze bevat alle members en methods om de externe film database te bevragen en de films weer te geven en ook de details van de aangeklikte film weer te geven.
+Deze bevat alle members en methods om de externe film database te bevragen en de films weer te geven en ook de details van de aangeklikte film weer te geven.
+
 - Deze klasse heeft uiteraard een FilmRepository object nodig en moet de data ophalen: #searchFilms(searchText). hij maakt hierbij gebruik van de volgende url: http://www.omdbapi.com/?s=zoekterm&apikey=57927523, waarbij de zoekterm vervangen wordt door de ingegeven zoekterm op de webpagina.
 - de methode #searchFilms(searchText) zal door gebruik te maken van de fetch API de films ophalen door de searchText mee te geven in het api request te halen:
   - indien dit succesvol gebeurt worden
@@ -239,5 +240,5 @@ De klasse `FilmBrowserComponent`.
     - de filmdata, indien er een zoekresultaat is, van de api toegevoegd als Film object details aan de overeenkomstige film uit de repository, gebruik hiervoor de method 'addDetail(id, objDetail)' Vervolgens wordt de film weergegeven op de pagina ,#showDetailFilm(film) method.
     - een gepaste boodschap gegeven - showMessage(message) method, indien geen zoekresultaat is.
   - indien dit niet succesvol gebeurt, dan wordt een gepast bericht naar de console (dit mag eventueel ook via een alert of op de webpagina zelf) gestuurd.
-- de methode #showFilms() zal de films op de webpagina weergeven. Elke film bevat een knop om de details te bekijken #getFilm(id).
-- de methode #showFilmsDetail(film) zal de film op de webpagina weergeven. Als er vervolgens geklikt wordt op de afbeelding van de film wordt er teruggekeerd naar het overzicht van de films - #showFilms().
+- de methode #showFilms() zal de films op de webpagina weergeven. Elke film bevat een knop om de details te bekijken. Implementeer het click event en roep de methode #getFilm(id) aan.
+- de methode #showDetailFilm(film) zal de film op de webpagina weergeven. Als er vervolgens geklikt wordt op de afbeelding van de film wordt er teruggekeerd naar het overzicht van de films - #showFilms(). Implementeer.

@@ -2,8 +2,10 @@ import { FilmRepository } from './filmRepository.js';
 
 class FilmBrowserComponent {
   #filmRepository;
+  #url;
   constructor() {
     this.#filmRepository = new FilmRepository();
+    this.#url = 'http://www.omdbapi.com/';
     document.getElementById('searchBtn').onclick = () => {
       // TODO
     };
@@ -96,4 +98,3 @@ class FilmBrowserComponent {
     );
   }
 }
-
