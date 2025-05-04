@@ -122,8 +122,8 @@ STAP 1. Ophalen van de trivias en weergave in de console
 - klasse `Trivia`. Deze bevat reeds de private attributen en de getters.
 - klasse `TriviaRepository`. Deze zal de 10 random trivia bijhouden en de nodige methodes voorzien om de TriviaComponent te kunnen uitvoeren (zie verder), maw om de quiz te kunnen spelen. De TriviaRepository bevat:
   - #trivias: houdt de 10 trivia vragen bij
-  - trivias (get): retourneert `#trivias`. Implementeer.
-  - addTrivias(dataObjecten) mapt de dataObjecten (bekomen met de Fetch API) naar Trivia objects en voegt ze toe aan de trivia's array. Bekijk een mogelijke response van de api in het bestand 'exampleResponseApi.json': hier zie je dat het juiste antwoord (correct_answer) en de foute antwoorden (incorrect_answers) twee verschillende properties zijn. In een Trivia object moet 'answers' alle mogelijke antwoorden bevatten, dus het correcte antwoord en de foute antwoorden.
+  - trivias (get): retourneert `#trivias`.
+  - addTrivias(dataObjecten) mapt de dataObjecten (bekomen met de Fetch API) naar Trivia objects en voegt ze toe aan de trivia's array. Bekijk een mogelijke response van de api in het bestand 'exampleResponseApi.json': hier zie je dat het juiste antwoord (correct_answer) en de foute antwoorden (incorrect_answers) twee verschillende properties zijn. In een Trivia object moet 'answers' alle mogelijke antwoorden bevatten, dus het correcte antwoord en de foute antwoorden. Implementeer.
 - klasse `TriviaComponent`:
   - heeft uiteraard een TriviaRepository object #triviaRepository nodig evenals de url #url om de data op te halen
   - constructor : bekijk de code
@@ -150,9 +150,9 @@ STAP 3. Klik op de Submit answer knop en controleer of het antwoord klopt.
 - klasse `TriviaRepository`.
   - van de antwoorden houden we in de array '#answers' bij of het antwoord al dan niet correct was (true of false).
   - numberOfAnswers: geeft het aantal reeds gegeven antwoorden terug
-  - correctAswers: geeft het aantal reeds gegeven correcte antwoorden terug
+  - correctAswers: geeft het aantal reeds gegeven correcte antwoorden terug. Tel het aantal voorkomens van true in de array '#answers'.
   - numberOfTrivias: geeft het aantal vragen terug
-  - checkAnswer(answer): retourneert true of false naargelang het antwoord al dan niet correct is en voegt dit toe (true of false) aan de collection van answers.
+  - checkAnswer(answer): retourneert true of false naargelang het antwoord op de huidige trivia (gebruik hiervoor de getter trivia) al dan niet correct is en voegt dit toe (true of false) aan de collection van answers.
   - checkEndGame(): retourneert true or false naargelang de quiz al dan niet ten einde is. De quiz is ten einde als het aantal Trivia gelijk is aan het aantal gegeven antwoorden.
 - klasse `TriviaComponent`
   - #showTrivia : Roept de methode #sendClickHandler aan als op de 'send' knop geklikt wordt. Bekijk de code
@@ -168,9 +168,9 @@ STAP 4. Ophalen van de volgende trivia en de weergave van de trivia en aantal re
 ![trivia4.png](docs/trivia4.png)
 
 - klasse `TriviaRepository`
-  - de getter trivia retourneert de volgende trivia op.
+  - de getter trivia retourneert de volgende trivia. Maak hiervoor gebruik van het aantal gegeven antwoorden ('numberOfAnswers')
 - klasse `TriviaComponent`
-  - #showTrivia : Bekijk de code. De methode roept #sendClickHandler aan als op de knop geklikt wordt. Implementeer nog het weergeven van het aantal reeds gestelde vragen tov het totaal aantal vragen (span met id="question")
+  - #showTrivia : Bekijk de code. Implementeer nog het weergeven van het aantal reeds gestelde vragen tov het totaal aantal vragen (span met id="question")
   - #nextClickHander: geeft de volgende trivia weer. Bekijk de code
 
 Voer de code uit.
